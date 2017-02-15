@@ -1,0 +1,106 @@
+@import "local";
+@import "bootstrap";
+
+body {
+  font-weight: 300;
+}
+
+.header {
+  padding: $padding-huge 0;
+
+  &-title {
+    margin-top: 0;
+  }
+
+  &-profile {
+    text-align: right;
+
+    &__image {
+      border: 0;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    &-title,
+    &-subtitle,
+    &-profile {
+      text-align: left;
+    }
+
+    &-profile {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    &-title,
+    &-subtitle,
+    &-profile,
+    .section-heading {
+      text-align: center;
+    }
+
+    &-profile {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.contact, .projects {
+  padding: $padding-big 0;
+}
+
+.projects {
+  background-color: $gray-lightest;
+  padding: $padding-big 0;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .card-deck {
+    &__title {
+      margin-bottom: 1rem;
+    }
+
+    .card-block {
+      font-size: .925rem;
+    }
+
+    .card-footer iframe {
+      margin-bottom: -8px;
+    }
+  }
+
+  .badge-stars {
+    &:before {
+      content: "\2605";
+      font-size: .65em;
+      padding-right: .25rem;
+      vertical-align: middle;
+    }
+  }
+}
+
+.footer {
+  padding: $padding-big 0;
+
+  .nav {
+    > li > a {
+      padding: .5rem;
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid $footer-border;
+    margin-top: $padding-big;
+    padding-top: $padding-big;
+  }
+}
