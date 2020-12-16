@@ -2,7 +2,15 @@ const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: { content: ['./public/**/*.html', './src/**/*.vue'] },
+  purge: {
+    content: [
+      './public/**/*.html',
+      './src/**/*.vue',
+    ],
+    options: {
+      safelist: ['emoji'],
+    },
+  },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
