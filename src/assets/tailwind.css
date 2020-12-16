@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 17px;
+  }
+
+  body {
+    @apply font-light;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-8;
+  }
+
+  .emoji {
+    @apply inline-block w-5 h-5;
+  }
+}
