@@ -18,7 +18,7 @@
         engaged 💍 <br>
         full time parent 👩‍👧<br>
         freelance web developer 👩‍💻<br>
-        blogging at <a class="text-gray-700 dark:text-gray-300 dark:hover:text-violet-300 hl-teal-100 hover:hl-teal-200 dark:bg-none dark:hover:bg-none" href="">geekish.dev</a> 🖋
+        blogging at <a class="text-gray-700 dark:text-gray-300 dark:hover:text-violet-300 hl-teal-100 hover:hl-teal-200 dark:bg-none dark:hover:bg-none" href="https://geekish.dev">geekish.dev</a> 🖋
       </p>
       <nav class="flex items-start space-x-2 text-gray-500">
         <a href="https://instagram.com/hannahwarmbier">
