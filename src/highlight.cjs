@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const { forEach } = require('lodash')
 const colors = require('tailwindcss/colors')
 const plugin = require('tailwindcss/plugin')
 
@@ -16,8 +16,8 @@ module.exports = plugin(function({ addUtilities, theme }) {
 
   const highlights = {}
 
-  _.forEach(colorNames, (color) => {
-    _.forEach(values, (value) => {
+  forEach(colorNames, (color) => {
+    forEach(values, (value) => {
       highlights[`.hl-${color}-${value}`] = {
         ...hl,
         backgroundImage: gradient(colors[color][value]),

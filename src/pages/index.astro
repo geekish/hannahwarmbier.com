@@ -1,13 +1,42 @@
-<template>
-  <div id="app" class="">
+---
+import '../styles/tailwind.css'
+---
+<!DOCTYPE html>
+<html x-data="{ darkMode: $persist('on').as('is_dark'), toggleTheme () { this.darkMode = this.darkMode === 'on' ? 'off' : 'on'; } }" lang="en" x-bind:class="darkMode === 'on' && 'dark'" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Hannah Warmbier</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.bunny.net/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white dark:bg-gray-900 dark:text-gray-50">
+  <div>
     <div class="fixed top-0 right-0 m-6">
-      <ToggleTheme />
+      <button
+        x-on:click="toggleTheme"
+        class="text-gray-500 hover:text-violet-600 dark:text-gray-100 dark:hover:text-yellow-200 focus:outline-none"
+        >
+        <svg x-show="darkMode === 'on'" x-cloak xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="44" height="44" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="4" />
+          <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+        </svg>
+        <svg x-show="darkMode === 'off'" x-cloak xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+          <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2" />
+          <path d="M19 11h2m-1 -1v2" />
+        </svg>
+      </button>
     </div>
     <div class="p-8 md:p-12">
-      <header class="">
-        <img class="rounded-full w-32 h-32 ring-4 ring-gray-400 dark:ring-gray-700" src="./assets/profile.png" alt="Ancient photo of Hannah Warmbier" title="Das me!">
+      <header>
+        <img class="w-32 h-32 rounded-full ring-4 ring-gray-400 dark:ring-gray-700" src="../assets/profile.png" alt="Ancient photo of Hannah Warmbier" title="Das me!">
         <div class="mt-6">
-          <h1 class="text-3xl leading-tight font-medium text-gray-700 dark:text-gray-300">Hannah Warmbier</h1>
+          <h1 class="text-3xl font-medium leading-tight text-gray-700 dark:text-gray-300">Hannah Chartier</h1>
           <p class="text-2xl leading-tight text-gray-500 dark:text-gray-600">
             Also known as <a class="text-gray-600 dark:text-gray-500 dark:hover:text-violet-300 hl-amber-100 hover:hl-amber-200 dark:bg-none dark:hover:bg-none" href="https://github.com/geekish">@geekish</a>
           </p>
@@ -15,7 +44,6 @@
       </header>
       <p class="my-4 text-xl leading-relaxed text-gray-600 dark:text-gray-500">
         <strong class="text-gray-700 dark:text-gray-400">Currently</strong><br>
-        engaged 💍 <br>
         full time parent 👩‍👧<br>
         freelance web developer 👩‍💻<br>
         blogging at <a class="text-gray-700 dark:text-gray-300 dark:hover:text-violet-300 hl-teal-100 hover:hl-teal-200 dark:bg-none dark:hover:bg-none" href="https://geekish.dev">geekish.dev</a> 🖋
@@ -49,7 +77,7 @@
           </svg>
         </a>
         <a href="https://twitter.com/hannahwarmbier">
-          <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 dark:text-gray-700 hover:text-lightBlue-500 dark:hover:text-lightBlue-500 h-7 w-7" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-500 dark:text-gray-700 hover:text-sky-500 dark:hover:text-sky-500 h-7 w-7" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
           </svg>
@@ -57,17 +85,15 @@
       </nav>
     </div>
   </div>
-</template>
+  <script>
+    import Alpine from 'alpinejs';
+    import persist from '@alpinejs/persist';
+    import twemoji from 'twemoji'
+    Alpine.plugin(persist)
+    window.Alpine = Alpine;
+    Alpine.start();
 
-<script>
-import twemoji from 'twemoji'
-import ToggleTheme from '@/components/ToggleTheme'
-
-export default {
-  name: 'App',
-  components: { ToggleTheme },
-  mounted () {
-    twemoji.parse(this.$el)
-  }
-}
-</script>
+    twemoji.parse(document.querySelector('body > div'))
+  </script>
+</body>
+</html>
