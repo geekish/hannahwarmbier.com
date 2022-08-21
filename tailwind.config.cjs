@@ -1,25 +1,14 @@
-const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: {
-    content: [
-      './public/**/*.html',
-      './src/**/*.vue',
-    ],
-    options: {
-      safelist: ['emoji'],
-    },
-  },
-  darkMode: 'class', // or 'media' or 'class'
+  content: [
+    './src/**/*.astro',
+  ],
+  safelist: ['emoji'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        violet: colors.violet,
-        teal: colors.teal,
-        lightBlue: colors.lightBlue,
-        yellow: colors.amber,
-        orange: colors.orange,
         gray: {
           100: '#F7FAFC',
           200: '#EDF2F7',
@@ -30,7 +19,7 @@ module.exports = {
           700: '#4A5568',
           800: '#2D3748',
           900: '#1A202C',
-        }
+        },
       },
       fontFamily: {
         sans: ['Rubik', ...defaultTheme.fontFamily.sans],
@@ -43,7 +32,7 @@ module.exports = {
     },
   },
   plugins: [
-    require('./src/highlight'),
+    require('./src/highlight.cjs'),
     require('@tailwindcss/forms'),
   ],
 }

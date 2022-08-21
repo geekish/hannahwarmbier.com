@@ -1,47 +1,25 @@
 {
   "name": "hannahwarmbier.com",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@tailwindcss/forms": "^0.2.1",
-    "core-js": "^3.6.5",
-    "twemoji": "^13.0.1",
-    "vue": "^2.6.11"
+    "@alpinejs/persist": "^3.10.3",
+    "alpinejs": "^3.10.3",
+    "lodash": "^4.17.21",
+    "twemoji": "^13.0.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "vue-cli-plugin-tailwind": "~2.0.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/recommended",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {
-      "vue/max-attributes-per-line": "off"
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "@astrojs/mdx": "^0.10.0",
+    "@astrojs/tailwind": "^1.0.0",
+    "@tailwindcss/forms": "^0.5.2",
+    "astro": "^1.0.6"
+  }
 }
