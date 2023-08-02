@@ -1,7 +1,7 @@
 The MIT License (MIT)
 =====================
 
-Copyright © 2020 Hannah Warmbier <hannahwarmbier@gmail.com>
+Copyright © 2020 Hannah Chartier <hannah@sent.com>
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
